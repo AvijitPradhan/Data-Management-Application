@@ -20,3 +20,11 @@ print(response.text)
  @then ("User should be created")
  
 import odbc
+
+@Then ("User sends GET request")
+
+response = requests.request("GET", url,params=querystring, headers=headers, verify=False)
+
+@Then ("User sends DELETE request")
+
+response = requests.request("DELETE", url, headers=headers, verify=False)
