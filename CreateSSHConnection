@@ -1,0 +1,18 @@
+import paramiko 
+import sys
+import subprocess
+
+jmp=paramiko.SSHClient() jmp.set_missing_host_key_policy(paramiko.AutoAddPolicy()) jmp.connect('192.168.115.103',username='osmanl',password='xxxxxx')
+
+vmtransport = jmp.get_transport()
+local_addr = ('192.168.115.103', 22)
+dest_addr = ('10.103.53.26', 22)
+vmchannel = vmtransport.open_channel("direct-tcpip", dest_addr, local_addr)
+
+remote=paramiko.SSHClient() remote.set_missing_host_key_policy(paramiko.AutoAddPolicy()) remote.connect('10.103.53.26', username='latiu', password='xxxx', sock=vmchannel)
+
+stdin, stdout, stderr = remote.exec_command("show version | no-more")
+
+print stdout.read()
+remote.close() 
+jmp.close()
