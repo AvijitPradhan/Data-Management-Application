@@ -1,6 +1,6 @@
 
 import os
-import odbc
+import pyodbc
 import requests
 
 def before_all(context):
@@ -8,19 +8,22 @@ def before_all(context):
 
   
 def before_feature(context, feature):
-  pass
-  *** Check for Test Data(Uri, Body parameters) from Swagger ***
+  *** To get the cookies ***
+  
+  x = requests.post(url, data=data) 
+  print x.cookies
+ 
 
 def before_scenario(context, scenario):
   pass
-*** CHeck for the Environment settings for a particular environment ***
+*** CHeck for API KEY and Bearer token for the particular API ***
+
 
 def after_scenario(context, scenario):
-  pass
-*** Check in Database for validations after requests are sent ***
+cnxn = pyodbc.connect('DRIVER={Devart ODBC Driver for MySQL};User ID=myuserid;Password=mypassword;Server=myserver;Database=mydatabase;Port=myport;String Types=Unicode')
+
 
 def after_all(context):
-  pass
 
 response = requests.request(​"DELETE"​, url, ​headers​=headers, ​verify​=​False​)
 
