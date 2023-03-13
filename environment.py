@@ -3,21 +3,26 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import options
 
 
-def before_all(context):
+@before_all(context):
   print("configuring local driver")
 
 def configure_local_driver(context):
   options = webdriver.ChromeOptions()
   
-def before_feature(context, feature):
-  pass
+@before_feature(context, feature):
+  U.df = U.read_excel('//sheet_location', sheetname)
 
-def before_scenario(context, scenario):
-  pass
+@before_scenario(context, scenario):
+  def someFunc(scenario):
+  Log.Message("Before running the " + scenario.Name + "scenario")
+  
 
-def after_scenario(context, scenario):
-  pass
+@after_scenario(context, scenario):
+  def someFunc(scenario):
+  Log.Message("The " + scenario.Name + " scenario has been executed")
 
-def after_all(context):
-  pass
+@after_all(context):
+  def someFunc(param1):
+  global dbConnection
+  dbConnection.Close()
 
