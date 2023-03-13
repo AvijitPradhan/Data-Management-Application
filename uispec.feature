@@ -8,7 +8,9 @@ Feature: Navigate to 'https://reqres.in/' with all request types and endpoints
     Then User see different request types and endpoints
     .
     .
+    Then User can see a Button to navigate to Support Page
     Then user see payment options
+    Then User can see 'One Time' and 'Monthly' payment  option in Support page
     And user see the Upgrade button options
  
 
