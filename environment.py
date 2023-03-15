@@ -13,20 +13,19 @@ def configure_local_driver(context):
   cwd = os.getcwd()
   options = webdriver.ChromeOptions()
   
-@before_feature(context, feature):
-  U.df = U.read_excel('//sheet_location', sheetname)
+def before_feature(context, feature):
+  U.df = U.read_excel('//users/test/sheets', testcases)
 
-@before_scenario(context, scenario):
-  def someFunc(scenario):
-  Log.Message("Before running the " + scenario.Name + "scenario")
+def before_scenario(context, scenario):
+  driver = webdriver.Chrome(executable_path="C:\chromedriver.exe")
+  driver.maximize_window()
+ 
+def after_scenario(context, scenario):
+  driver.execute_script("window.scrollBy(0,0)","")
   
 
-@after_scenario(context, scenario):
-  def someFunc(scenario):
-  Log.Message("The " + scenario.Name + " scenario has been executed")
-
-@after_all(context):
-  def someFunc(param1):
-  global dbConnection
-  dbConnection.Close()
+def after_all(context):
+  driver.close_window()
+  
+  
 
