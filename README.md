@@ -5,7 +5,7 @@ Setup : Navigate to environment.py file to check the setup methods - pip install
 
 1. Installation: sudo pip install requests
 sudo pip install pytest sudo
-2. All python ​TC files/modules​ & ​methods/functions s​ hould start with name test. 3. All folder should be python packages ie. __init__.py should be there.
+2. All python TC files/modules & methods/functions should start with name test. 3. All folder should be python packages ie. __init__.py should be there.
 4. Common structure of setup, tests, teardown format.
 5. Way to execute:
        python "scriptloction".py
@@ -15,6 +15,6 @@ OR
 python -m <framework> folder_name/
 
 
-Run the tests: behave C:\Users\AvijitPradhan\DataManagementApplication\UIspec.py
+Run the tests: behave C:\Users\AvijitPradhan\DataManagementApplication\APIspec.py
 
 Report: VTF counter will show the required details for pass, failed and skipped tests
