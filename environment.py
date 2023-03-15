@@ -1,12 +1,16 @@
 import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import options
+from common.vtf_counter import VTFCounter
 
 
-@before_all(context):
+def before_all(context):
   print("configuring local driver")
+  configure_local_driver(context)
+  
 
 def configure_local_driver(context):
+  cwd = os.getcwd()
   options = webdriver.ChromeOptions()
   
 @before_feature(context, feature):
