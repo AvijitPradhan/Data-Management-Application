@@ -15,6 +15,6 @@ OR
 python -m <framework> folder_name/
 
 
-Run the tests: behave "\folder path"\UIspec.py
+Run the tests: behave C:\Users\AvijitPradhan\DataManagementApplication\UIspec.py
 
 Report: VTF counter will show the required details for pass, failed and skipped tests
