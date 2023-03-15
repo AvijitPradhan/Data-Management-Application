@@ -2,6 +2,7 @@
 import os
 import pyodbc
 import requests
+from common.vtf_counter import VTFCounter
 
 def before_all(context):
   print("Set Validations or Bearer token for the required environment")
@@ -15,7 +16,8 @@ def before_feature(context, feature):
  
 
 def before_scenario(context, scenario):
-  pass
+  APIKey = test.datamanagementapplication
+  Token = Bearer ( "  ")
 *** CHeck for API KEY and Bearer token for the particular API ***
 
 
@@ -25,6 +27,6 @@ cnxn = pyodbc.connect('DRIVER={Devart ODBC Driver for MySQL};User ID=myuserid;Pa
 
 def after_all(context):
 
-response = requests.request(​"DELETE"​, url, ​headers​=headers, ​verify​=​False​)
+response = requests.request("DELETE", url, headers=headers, verify=False)
 
 *** This will delete the created data ***
