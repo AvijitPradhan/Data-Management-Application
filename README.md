@@ -24,3 +24,5 @@ cursor.execute('SELECT * FROM table_name')
 
 for i in cursor:
     print(i)
+    
+ """ DataLoadExecute.py file will execute the above requirement """
