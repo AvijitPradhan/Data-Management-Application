@@ -1,3 +1,7 @@
 # Data-Management-Application
 
-This has the baranches for UISPEC, APISPEC
+UISpec: It has all the requirements and details to run the UI automation test cases.
+
+APISpec: It has all the requirements and details to run th API automation test cases.
+
+DataLoadTransfomr:
