@@ -5,6 +5,6 @@
           - pip install behave
           - pip install venv
 
-2. Run the tests: behave "\folder path"\UIspec.py
+2. Run the tests: behave C:\Users\AvijitPradhan\DataManagementApplication\UIspec.py
 
 3. Report: VTF counter will show the required details for pass, failed and skipped tests
